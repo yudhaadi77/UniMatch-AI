@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Unimatch AI — SNBP Prediction (Demo)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">U</div>
+        <div>
+          <h1>Unimatch AI</h1>
+          <p class="subtitle">SNBP Acceptance Predictor (Demo)</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme">
+          <span class="sun">☀</span><span class="moon">🌙</span>
+        </button>
+        <span class="badge">v0.1</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <!-- FORM -->
+    <section class="card">
+      <h2 class="card-title">Input</h2>
+      <p class="muted mt-4">Fill the fields below, then click <strong>Predict</strong>.</p>
+
+      <div class="grid mt-16">
+        <label>Program
+          <select id="program" class="input">
+            <option value="saintek">Saintek</option>
+            <option value="soshum">Soshum</option>
+          </select>
+        </label>
+
+        <label>Target Major
+          <input id="target_major" class="input" placeholder="e.g., Medicine / Statistics" />
+        </label>
+
+        <label>Competitiveness
+          <select id="competitiveness" class="input">
+            <option value="very">Very competitive</option>
+            <option value="high" selected>High</option>
+            <option value="mid">Medium</option>
+            <option value="low">Lower</option>
+          </select>
+        </label>
+
+        <label>Rank Percentile
+          <input id="rank_percentile" type="number" min="1" max="100" value="100" class="input" />
+        </label>
+
+        <label>Achievement
+          <select id="achievement" class="input">
+            <option value="none">None</option>
+            <option value="school">School/City</option>
+            <option value="prov">Province</option>
+            <option value="national">National/International</option>
+          </select>
+        </label>
+
+        <label>School Accreditation
+          <select id="accreditation" class="input">
+            <option value="A">A</option>
+            <option value="B" selected>B</option>
+            <option value="C">C</option>
+          </select>
+        </label>
+      </div>
+
+      <h3 class="section-heading">Report Card (S1–S5)</h3>
+      <div class="grid">
+        <input id="s1" class="input" type="number" placeholder="S1 (0-100)" />
+        <input id="s2" class="input" type="number" placeholder="S2 (0-100)" />
+        <input id="s3" class="input" type="number" placeholder="S3 (0-100)" />
+        <input id="s4" class="input" type="number" placeholder="S4 (0-100)" />
+        <input id="s5" class="input" type="number" placeholder="S5 (0-100)" />
+      </div>
+
+      <h3 class="section-heading">Core Subjects (leave blank if N/A)</h3>
+      <div class="grid">
+        <input id="math" class="input" type="number" placeholder="Math (0-100)" />
+        <input id="language" class="input" type="number" placeholder="Indo+Eng avg (0-100)" />
+        <input id="physics" class="input" type="number" placeholder="Physics (saintek)" />
+        <input id="chemistry" class="input" type="number" placeholder="Chemistry (saintek)" />
+        <input id="biology" class="input" type="number" placeholder="Biology (saintek)" />
+        <input id="economics" class="input" type="number" placeholder="Economics (soshum)" />
+        <input id="geography" class="input" type="number" placeholder="Geography (soshum)" />
+        <input id="history" class="input" type="number" placeholder="History (soshum)" />
+      </div>
+
+      <div class="actions">
+        <button id="predictBtn" class="btn primary"><span class="btn-dot"></span> Predict</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="card">
+      <h2 class="card-title">Result</h2>
+      <div id="result" class="muted">Fill the form and click Predict.</div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="card">
+      <h2 class="card-title">Notes</h2>
+      <ul class="list">
+        <li>This is a <strong>demo scaffold</strong>. Replace the dummy model with a real ML pipeline later.</li>
+        <li>Probabilities are illustrative; not official SNBP outcomes.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2025 Unimatch AI — Demo</span>
+      <span class="muted">Built with Flask & Vanilla JS</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

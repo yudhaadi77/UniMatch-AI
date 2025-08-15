@@ -1,0 +1,15 @@
+Flask==3.0.3
+flask-cors==4.0.1
+python-dotenv==1.0.1
+pydantic==2.8.2
+
+pandas==2.2.2
+numpy==1.26.4
+openpyxl==3.1.5
+scikit-learn==1.5.1
+joblib==1.4.2
+PyYAML==6.0.2
+rapidfuzz==3.9.6
+
+# LLM provider
+openai==1.40.6

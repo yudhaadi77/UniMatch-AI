@@ -1,0 +1,10 @@
+provider: openai         # or: "none" to force dummy
+model: gpt-4o-mini       # any JSON-capable chat model
+temperature: 0.0
+max_output_tokens: 400
+json_mode: true
+
+# files
+kb_majors_path: ../kb/majors.json
+kb_distros_path: ../kb/distros.json
+calibrator_path: ./calibrator.pkl

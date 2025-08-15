@@ -1,0 +1,109 @@
+/* ================= Theme Tokens ================= */
+:root{
+  /* Light */
+  --bg: #f8fafc; --text:#0f172a; --muted:#64748b;
+  --card:#ffffff; --card-border:#e2e8f0;
+  --primary:#2563eb; --primary-2:#1d4ed8; --ring:rgba(37,99,235,.18);
+  --input-bg:#ffffff; --code-bg:#f1f5f9; --bar-bg:#e2e8f0;
+  --header-bg:#ffffffcc; --footer-bg:#ffffff;
+  --radius:16px; --shadow:0 10px 30px rgba(15,23,42,.06);
+  --page-bg: var(--bg);
+}
+
+/* Dark override */
+:root[data-theme="dark"]{
+  --bg:#0f172a; --text:#e5e7eb; --muted:#9aa7c7;
+  --card:#111827; --card-border:#1f2a44;
+  --primary:#5b8cff; --primary-2:#22d3ee; --ring:rgba(91,140,255,.35);
+  --input-bg:#0c142a; --code-bg:#0c142a; --bar-bg:#1a2646;
+  --header-bg:rgba(17,24,39,.65); --footer-bg:rgba(17,24,39,.45);
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --page-bg:
+    radial-gradient(1200px 400px at 10% -10%, rgba(34,211,238,.18), transparent 60%),
+    radial-gradient(1200px 400px at 90% -10%, rgba(91,140,255,.18), transparent 60%),
+    linear-gradient(180deg, #0b1226, #0f172a);
+}
+
+/* ================= Base ================= */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: var(--page-bg);
+}
+
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.mt-4{margin-top:4px}.mt-16{margin-top:16px}
+.muted{color:var(--muted)}
+.badge{background:linear-gradient(90deg,var(--primary),var(--primary-2));padding:6px 10px;border-radius:999px;font-size:12px;color:#fff}
+
+/* ================= Header & Footer ================= */
+.site-header{position:sticky;top:0;z-index:10;background:var(--header-bg);backdrop-filter:blur(6px);border-bottom:1px solid var(--card-border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:var(--shadow)}
+.brand h1{font-size:22px;line-height:1.1;margin:0}
+.subtitle{margin:2px 0 0 0;font-size:12px;color:var(--muted)}
+.header-actions{display:flex;align-items:center;gap:10px}
+
+.site-footer{margin-top:30px;border-top:1px solid var(--card-border);background:var(--footer-bg)}
+.site-footer .container{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+
+/* ================= Layout ================= */
+.main-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:980px){.main-grid{grid-template-columns:1.2fr 0.8fr}.main-grid .card:nth-child(2){grid-row:span 2}}
+
+/* ================= Card ================= */
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card-title{margin:0 0 6px 0;font-size:18px}
+
+/* ================= Form ================= */
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.section-heading{margin:18px 0 10px;font-size:14px;color:var(--muted);letter-spacing:.2px;text-transform:uppercase}
+label{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.input, input[type=number], select{
+  appearance:none;width:100%;padding:10px 12px;border-radius:12px;
+  border:1px solid var(--card-border); background:var(--input-bg); color:var(--text);
+  outline:none; transition:border .2s, box-shadow .2s, transform .05s;
+}
+.input:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--ring);transform:translateY(-1px)}
+
+/* ================= Buttons ================= */
+.actions{display:flex;gap:10px;margin-top:12px}
+.btn{padding:10px 14px;border-radius:12px;border:1px solid var(--card-border);color:var(--text);background:var(--input-bg);cursor:pointer;transition:transform .05s, box-shadow .15s, background .2s, border .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(15,23,42,.08)}
+:root[data-theme="dark"] .btn:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.btn.primary{background:linear-gradient(90deg,var(--primary),var(--primary-2));border-color:transparent;color:#fff;font-weight:700}
+.btn-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:middle}
+
+/* ================= Theme Toggle ================= */
+.toggle{
+  width:44px;height:36px;border-radius:12px;border:1px solid var(--card-border);
+  background:var(--input-bg);color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.toggle .sun,.toggle .moon{font-size:16px;transition:opacity .2s, transform .2s}
+:root[data-theme="dark"] .toggle .sun{opacity:.35;transform:scale(.9)}
+:root:not([data-theme="dark"]) .toggle .moon{opacity:.35;transform:scale(.9)}
+
+/* ================= Result ================= */
+.result .bar{height:12px;background:var(--bar-bg);border-radius:999px;overflow:hidden;margin:8px 0 6px}
+.result .fill{height:100%;background:var(--primary);transition:width .35s ease}
+.result .fill.medium{background:#f59e0b}
+.result .fill.low{background:#ef4444}
+.result .meta{font-size:13px;color:var(--muted)}
+.error{color:#b91c1c}
+pre{white-space:pre-wrap;word-wrap:break-word;background:var(--code-bg);border:1px solid var(--card-border);border-radius:12px;padding:10px;margin:8px 0 0}
+
+/* ================= Lists ================= */
+.list{margin:8px 0 0 0;padding-left:18px}
+.list li{margin:6px 0}
+
+.table-wrap{overflow:auto;border:1px solid var(--card-border);border-radius:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:var(--card)}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--card-border);text-align:left}
+.tbl thead th{position:sticky;top:0;background:var(--input-bg)}
+.tbl tbody tr:hover{background:rgba(37,99,235,.05)}
+:root[data-theme="dark"] .tbl tbody tr:hover{background:rgba(91,140,255,.08)}

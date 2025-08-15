@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Env & secrets
+.env
+.env.*
+*.pkl
+
+# Editors/OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Frontend
+node_modules/
+
+# Data mentah (jangan push Excel)
+data/*.xlsx
