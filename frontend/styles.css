@@ -107,3 +107,29 @@ pre{white-space:pre-wrap;word-wrap:break-word;background:var(--code-bg);border:1
 .tbl thead th{position:sticky;top:0;background:var(--input-bg)}
 .tbl tbody tr:hover{background:rgba(37,99,235,.05)}
 :root[data-theme="dark"] .tbl tbody tr:hover{background:rgba(91,140,255,.08)}
+
+/* ===== Searchable multi-select ===== */
+.multi-select{position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:8px; border:1px solid var(--card-border); border-radius:12px; background:var(--input-bg)}
+.multi-select:focus-within{outline:2px solid var(--primary); outline-offset:0}
+
+.multi-select .chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; background:rgba(37,99,235,.10); font-size:12px}
+:root[data-theme="dark"] .chip{background:rgba(91,140,255,.12)}
+.chip button{all:unset; cursor:pointer; font-weight:700}
+
+#majorsInput{min-width:160px; flex:1; border:none; background:transparent; padding:4px 0}
+#majorsInput:focus{outline:none}
+
+.dropdown{position:absolute; top:100%; left:0; right:0; z-index:999; background:var(--card); border:1px solid var(--card-border); border-radius:12px; margin-top:6px; max-height:260px; overflow:auto; box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.dropdown .opt{padding:10px 12px; cursor:pointer}
+.dropdown .opt:hover{background:rgba(37,99,235,.08)}
+:root[data-theme="dark"] .dropdown .opt:hover{background:rgba(91,140,255,.12)}
+.dropdown .empty{padding:10px 12px; color:var(--text-muted)}
+
+
+/* ===== Searchable multi-select (if belum ada, biarkan) ===== */
+.multi-select{position:relative; display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:8px; border:1px solid var(--card-border); border-radius:12px; background:var(--input-bg)}
+.multi-select:focus-within{outline:2px solid var(--primary); outline-offset:0}
+.multi-select .chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; background:rgba(37,99,235,.10); font-size:12px}
+:root[data-theme="dark

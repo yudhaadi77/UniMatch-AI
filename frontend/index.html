@@ -41,11 +41,14 @@
             <option value="soshum">Soshum</option>
           </select>
         </label>
-
-        <label>Target Major
-          <input id="target_major" class="input" placeholder="e.g., Medicine / Statistics" />
+        <label>Target Majors
+          <div class="multi-select" id="majorsBox">
+            <div class="chips" id="majorsChips"></div>
+            <input id="majorsInput" class="input" placeholder="Type to search majors…" autocomplete="off" />
+            <div class="dropdown" id="majorsDropdown" hidden></div>
+          </div>
+          <small class="muted">Type to search, <strong>Enter</strong> to add, click to select, <strong>Backspace</strong> to remove last.</small>
         </label>
-
         <label>Competitiveness
           <select id="competitiveness" class="input">
             <option value="very">Very competitive</option>
